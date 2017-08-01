@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="TicTacToe">
+<head>
+  <meta charset="UTF-8">
+  <title>TicTacToe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Unica+One|Varela+Round'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<!-- phases-->
+<input type="radio" name="phase" id="inputting" checked="true"/>
+<input type="radio" name="phase" id="playing"/>
+<input type="radio" name="phase" id="showingResult"/>
+<!--UI-->
+<form class="inputUI" onSubmit="submitHandle(event)">
+  <!--Choose mode-->
+  <input type="radio" name="mode" id="single" value="single" checked="true"/>
+  <label for="single">1 Player</label>
+  <input type="radio" name="mode" id="multi" value="multi"/>
+  <label for="multi">2 Players</label>
+  <div class="multiBox box">
+    <p>Please input the player names: </p>
+    <div class="circleBox">
+      <div class="symbolBox">
+        <div class="circle"></div>
+      </div>
+      <input class="player1" type="text"/>
+    </div>
+    <div class="crossBox">
+      <div class="symbolBox">
+        <div class="cross"></div>
+      </div>
+      <input class="player2" type="text"/>
+    </div>
+  </div>
+  <div class="singleBox box">
+    <p>Please select symbol and input your name:</p>
+    <input type="radio" name="symbol" id="singleCircle" value="circle" checked="true"/>
+    <label class="circle" for="singleCircle"></label>
+    <input type="radio" name="symbol" id="singleCross" value="cross"/>
+    <label class="cross" for="singleCross"></label>
+    <input class="singleName" type="text"/>
+  </div>
+  <input type="submit" value="SEND"/>
+</form>
+<div class="gameUI">
+  <div class="hint circle"></div>
+  <h1>Tic-Tac-Toe</h1>
+  <div class="box">
+    <div class="symbol" id="1" onClick="clickHandle(event)"> </div>
+    <div class="symbol" id="2" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="3" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="4" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="5" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="6" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="7" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="8" onClick="clickHandle(event)"></div>
+    <div class="symbol" id="9" onClick="clickHandle(event)"></div>
+  </div>
+</div>
+<div class="congratulate">
+  <div class="result"></div>
+  <button class="replay" onClick="initGame()">REPLAY?</button>
+</div>
+  
+    <script src="js/index.js"></script>
+
+</body>
+</html>

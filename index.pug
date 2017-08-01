@@ -1,0 +1,52 @@
+// phases
+input(type="radio" name="phase" id="inputting" checked="true")
+input(type="radio" name="phase" id="playing")
+input(type="radio" name="phase" id="showingResult")
+
+//UI
+form.inputUI(onSubmit="submitHandle(event)")
+  //Choose mode
+  input(type="radio" name ="mode" id = "single" value = "single" checked = "true")
+  label(for="single") 1 Player
+  input(type="radio" name ="mode" id = "multi" value = "multi")
+  label(for="multi") 2 Players
+  
+  .multiBox.box
+    p Please input the player names: 
+    .circleBox
+      .symbolBox
+        .circle
+      input.player1(type="text")
+    .crossBox
+      .symbolBox
+        .cross
+      input.player2(type="text")
+      
+  .singleBox.box
+    p Please select symbol and input your name:
+    input(type="radio" name ="symbol" id = "singleCircle" value = "circle" checked = "true")
+    label.circle(for="singleCircle")
+    input(type="radio" name ="symbol" id = "singleCross" value = "cross")
+    label.cross(for="singleCross")
+    
+    input.singleName(type="text")
+  input(type="submit" value="SEND")
+
+.gameUI
+  .hint.circle
+  h1 Tic-Tac-Toe
+  .box
+    .symbol(id="1" onClick="clickHandle(event)") 
+    .symbol(id="2" onClick="clickHandle(event)")
+    .symbol(id="3" onClick="clickHandle(event)")
+    .symbol(id="4" onClick="clickHandle(event)")
+    .symbol(id="5" onClick="clickHandle(event)")
+    .symbol(id="6" onClick="clickHandle(event)")
+    .symbol(id="7" onClick="clickHandle(event)")
+    .symbol(id="8" onClick="clickHandle(event)")
+    .symbol(id="9" onClick="clickHandle(event)")
+    
+
+.congratulate
+  .result
+  button.replay(onClick="initGame()") REPLAY?
